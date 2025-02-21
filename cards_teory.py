@@ -29,13 +29,7 @@ def print_card(rank, suit):
     print(rank_line_right)
     print(bottom)
 
-
-def main():
-    cards = [("A", "♠"), ("10", "♥"), ("K", "♦"), ("7", "♣")]
-    for rank, suit in cards:
-        print_card(rank, suit)
-        print()  # Add a space between cards
-
-
-if __name__ == "__main__":
-    main()
+cards = [("A", "♠"), ("10", "♥"), ("K", "♦"), ("7", "♣")]
+for rank, suit in cards:
+    print_card(rank, suit)
+    print()  # Add a space between cards
