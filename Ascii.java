@@ -20,9 +20,9 @@ public class Ascii {
         } else if (suit == "hearts"){
             System.out.println(ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│    " + ConsoleColors.RED + "♥" + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "    │" + ConsoleColors.RESET); // suit_line
         } else if (suit == "clubs"){
-            System.out.println(ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│    " + "♣" + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "    │" + ConsoleColors.RESET); // suit_line
+            System.out.println(ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│    " + "♣" + "    │" + ConsoleColors.RESET); // suit_line
         } else if (suit == "spades"){
-            System.out.println(ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│    " + "♠" + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "    │" + ConsoleColors.RESET); // suit_line
+            System.out.println(ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│    " + "♠" + "    │" + ConsoleColors.RESET); // suit_line
         }
         System.out.println(ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│         │" + ConsoleColors.RESET); // side
 
