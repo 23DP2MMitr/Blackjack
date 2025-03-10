@@ -24,13 +24,14 @@ public class Ascii_new {
             cardLine = "        ";
         }
 
-        String cardOutput = ConsoleColors.WHITE_BACKGROUND_BRIGHT + "┌─────────┐" + ConsoleColors.RESET + "\n"
-                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│" + color + card + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT + cardLine + "│" + ConsoleColors.RESET + "\n"
-                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│         │" + ConsoleColors.RESET + "\n"
-                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│    " + color + suitSymbol + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "    │" + ConsoleColors.RESET + "\n"
-                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│         │" + ConsoleColors.RESET + "\n"
-                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "│" + cardLine + color + card + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT +  "│" + ConsoleColors.RESET + "\n"
-                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "└─────────┘" + ConsoleColors.RESET;
+        String cardOutput = ConsoleColors.WHITE_BACKGROUND_BRIGHT + " " + color + card + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT + cardLine + " " + ConsoleColors.RESET + "\n" 
+                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "           " + ConsoleColors.RESET + "\n"
+                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "           " + ConsoleColors.RESET + "\n"
+                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "     " + color + suitSymbol + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "     " + ConsoleColors.RESET + "\n"
+                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "           " + ConsoleColors.RESET + "\n"
+                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "           " + ConsoleColors.RESET + "\n"
+                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + " " + cardLine + color + card + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT +  " " + ConsoleColors.RESET;
+                
 
         return cardOutput;
     }
