@@ -12,6 +12,10 @@ public class Card {
 
     public String toString()
     {
-        return number + " of " + suit;
+        return number + " " + suit;
+    }
+
+    public String NumberReturn() {
+        return number + "";
     }
 }

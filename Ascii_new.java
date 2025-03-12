@@ -1,5 +1,5 @@
 public class Ascii_new {
-    public String printCards_new(String card, String suit) {
+    public String printCards_new(String number, String suit) {
         String suitSymbol = "";
         String color = "";
 
@@ -7,30 +7,37 @@ public class Ascii_new {
             color = ConsoleColors.RED;
         }
 
-        if (suit == "diamonds") {
-            suitSymbol = "♦";
-        } else if (suit == "hearts") {
-            suitSymbol = "♥";
-        } else if (suit == "clubs") {
-            suitSymbol = "♣";
-        } else if (suit == "spades") {
-            suitSymbol = "♠";
+        switch (suit) {
+            case "diamonds":
+                suitSymbol = "♦";
+                break;
+            case "hearts":
+                suitSymbol = "♥";
+                break;
+            case "clubs":
+                suitSymbol = "♣";
+                break;
+            case "spades":
+                suitSymbol = "♠";
+                break;
+            default:
+                break;
         }
 
         String cardLine;
-        if (card == "10") {
+        if (number == "10") {
             cardLine = "       ";
         } else {
             cardLine = "        ";
         }
 
-        String cardOutput = ConsoleColors.WHITE_BACKGROUND_BRIGHT + " " + color + card + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT + cardLine + " " + ConsoleColors.RESET + "\n" 
+        String cardOutput = ConsoleColors.WHITE_BACKGROUND_BRIGHT + " " + color + number + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT + cardLine + " " + ConsoleColors.RESET + "\n" 
                 + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "           " + ConsoleColors.RESET + "\n"
                 + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "           " + ConsoleColors.RESET + "\n"
                 + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "     " + color + suitSymbol + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "     " + ConsoleColors.RESET + "\n"
                 + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "           " + ConsoleColors.RESET + "\n"
                 + ConsoleColors.WHITE_BACKGROUND_BRIGHT + "           " + ConsoleColors.RESET + "\n"
-                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + " " + cardLine + color + card + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT +  " " + ConsoleColors.RESET;
+                + ConsoleColors.WHITE_BACKGROUND_BRIGHT + " " + cardLine + color + number + ConsoleColors.RESET + ConsoleColors.WHITE_BACKGROUND_BRIGHT +  " " + ConsoleColors.RESET;
                 
 
         return cardOutput;

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class CardManager {
-    private ArrayList<Card> cards = new ArrayList<Card>();
+    private ArrayList<Card> deck = new ArrayList<Card>();
     private Random random = new Random();
 
     public void initalizeDeck()
@@ -29,17 +29,17 @@ public class CardManager {
                         break;
                     default:
                 }
-                cards.add(card);
+                deck.add(card);
             }
         }
 
-        System.out.println(cards.toString());
+        // System.out.println(deck.toString());
     }
 
     public Card getRandomCardFromDesk() {
-        int cardIndex = random.nextInt(cards.size());
-        Card card = cards.get(cardIndex);
-        cards.remove(cardIndex);
+        int cardIndex = random.nextInt(deck.size());
+        Card card = deck.get(cardIndex);
+        deck.remove(cardIndex);
         return card;
     }
 }
