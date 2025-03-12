@@ -1,10 +1,6 @@
-import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
-        
-
-
         // String card1 = ascii_new.printCards_new("A", "hearts");
         // String card2 = ascii_new.printCards_new("10", "diamonds");
         // String card3 = ascii_new.printCards_new("K", "clubs");
@@ -18,10 +14,12 @@ public class App {
         // for (int i = 0; i < cardLines1.length; i++) {
         //     System.out.println(cardLines1[i] + " " + cardLines2[i] + " " + cardLines3[i] + " " + cardLines4[i]);
         // }
+        // System.out.println(cardManager.getRandomCardFromDesk());
 
         CardManager cardManager = new CardManager();
-
         cardManager.initalizeDeck();
-        System.out.println(cardManager.getRandomCardFromDesk());
+        
+        System.out.println(Ascii_new.printCards_new(cardManager.getRandomCardFromDesk()));
+    
     }
 }

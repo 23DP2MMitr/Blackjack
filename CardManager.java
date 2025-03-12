@@ -16,10 +16,10 @@ public class CardManager {
                 switch (i)
                 {
                     case 0:
-                        card.suit = Suit.heart;
+                        card.suit = Suit.hearts;
                         break;
                     case 1:
-                        card.suit = Suit.diamond;
+                        card.suit = Suit.diamonds;
                         break;
                     case 2:
                         card.suit = Suit.clubs;
