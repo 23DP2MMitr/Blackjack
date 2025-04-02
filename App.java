@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -15,11 +16,34 @@ public class App {
         //     System.out.println(cardLines1[i] + " " + cardLines2[i] + " " + cardLines3[i] + " " + cardLines4[i]);
         // }
         // System.out.println(cardManager.getRandomCardFromDesk());
+        Scanner scanner = new Scanner(System.in);
 
         CardManager cardManager = new CardManager();
         cardManager.initalizeDeck();
+
+        String card1 = Ascii_new.printCards_new(cardManager.getRandomCardFromDesk());
+        String card2 = Ascii_new.printCards_new(cardManager.getRandomCardFromDesk());
+
+        for (int i = 0; i < card1.split("\n").length; i++) {
+            System.out.println(card1.split("\n")[i] + " " + card2.split("\n")[i]);
+        }
+
+        String request = scanner.nextLine();
+        // System.out.println(card1.split("\n")[0] + " " + card2.split("\n")[0]);
+
+        if (request.equals("more")) {
+            System.out.println(ConsoleColors.CLEAR);
+            String card3 = Ascii_new.printCards_new(cardManager.getRandomCardFromDesk());
+            String card4 = Ascii_new.printCards_new(cardManager.getRandomCardFromDesk());
+
+            for (int i = 0; i < card1.split("\n").length; i++) {
+                System.out.println(card1.split("\n")[i] + " " + card2.split("\n")[i] + " " + card3.split("\n")[i] + " " + card4.split("\n")[i]);
+            }
+    
         
-        System.out.println(Ascii_new.printCards_new(cardManager.getRandomCardFromDesk()));
+        }
+        
+        
     
     }
 }
