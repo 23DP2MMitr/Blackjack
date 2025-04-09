@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Ascii_new {
     public static String printCards_new(Card card) {
         int number = card.number;
@@ -62,5 +64,17 @@ public class Ascii_new {
                 
 
         return cardOutput;
+    }
+
+    public static void outDesk(ArrayList<Card> desk) {
+        String cardLines = "";
+        for (int i = 0; i < 7; i++) {
+            for(int j = 0; j < desk.size(); j++)
+            {
+                cardLines = cardLines + printCards_new(desk.get(j)).split("\n")[i] + " ";
+            }
+            cardLines = cardLines + "\n";
+        }
+        System.out.println(cardLines);
     }
 }

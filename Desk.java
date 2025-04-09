@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class CardManager {
+public class Desk {
     private ArrayList<Card> deck = new ArrayList<Card>();
     private Random random = new Random();
 
@@ -41,5 +41,15 @@ public class CardManager {
         Card card = deck.get(cardIndex);
         deck.remove(cardIndex);
         return card;
+    }
+
+    public void addCard(Card card)
+    {
+        deck.add(card);
+    }
+
+    public ArrayList<Card> getDesk()
+    {
+        return deck;
     }
 }
