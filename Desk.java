@@ -2,19 +2,17 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Desk {
-    private ArrayList<Card> deck = new ArrayList<Card>();
-    private Random random = new Random();
+    private final ArrayList<Card> deck = new ArrayList<>();
+    private final Random random = new Random();
 
-    public void initalizeDeck()
-    {
+    public void initalizeDeck() {
         for(int i = 0; i < 4; i++)
         {
             for(int j = 2; j < 15; j++)
             {
                 Card card = new Card();
                 card.number = j;
-                switch (i)
-                {
+                switch (i) {
                     case 0:
                         card.suit = Suit.hearts;
                         break;
@@ -32,8 +30,6 @@ public class Desk {
                 deck.add(card);
             }
         }
-
-        // System.out.println(deck.toString());
     }
 
     public Card getRandomCardFromDesk() {
@@ -43,13 +39,11 @@ public class Desk {
         return card;
     }
 
-    public void addCard(Card card)
-    {
+    public void addCard(Card card) {
         deck.add(card);
     }
 
-    public ArrayList<Card> getDesk()
-    {
+    public ArrayList<Card> getDesk() {
         return deck;
     }
 }

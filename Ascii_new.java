@@ -4,48 +4,29 @@ public class Ascii_new {
     public static String printCards_new(Card card) {
         int number = card.number;
         Suit suit = card.suit;
-        String suitSymbol = "";
+        String suitSymbol;
         String color = "";
-        String cardNumber = ""; 
+        String cardNumber; 
 
         if (suit == Suit.diamonds || suit == Suit.hearts) {
             color = ConsoleColors.RED;
         }
 
-        switch (suit) {
-            case Suit.diamonds:
-                suitSymbol = "♦";
-                break;
-            case Suit.hearts:
-                suitSymbol = "♥";
-                break;
-            case Suit.clubs:
-                suitSymbol = "♣";
-                break;
-            case Suit.spades:
-                suitSymbol = "♠";
-                break;
-            default:
-                break;
-        }
+        suitSymbol = switch (suit) {
+            case diamonds -> "♦";
+            case hearts -> "♥";
+            case clubs -> "♣";
+            case spades -> "♠";
+            default -> "";
+        };
 
-        switch (number) {
-            case 11:
-                cardNumber = "J";
-                break;
-            case 12:
-                cardNumber = "Q";
-                break;
-            case 13:
-                cardNumber = "K";
-                break;
-            case 14:
-                cardNumber = "A";
-                break;
-            default:
-                cardNumber = number + "";
-                break;
-        }
+        cardNumber = switch (number) {
+            case 11 -> "J";
+            case 12 -> "Q";
+            case 13 -> "K";
+            case 14 -> "A";
+            default -> number + "";
+        };
 
         String cardLine;
         if (number == 10) {
