@@ -124,11 +124,21 @@ public class App {
 
             PlayerManager.updatePlayerChips(username, chips);
 
-            System.out.println("Do you want to play again? (yes/no)");
+            System.out.println("Do you want to play again? (yes/no), or 'lead' to see the leaderboard");
             String playAgain = scanner.nextLine();
             if (playAgain.equals("no")) {
                 System.out.println("Thank you for playing!");
                 break;
+            }
+            if (playAgain.equals("lead")) {
+                System.out.println("Leaderboard:");
+                PlayerManager.showLeaderboard();
+                System.out.println("Do you want to play again? (y/n)");
+                playAgain = scanner.nextLine();
+                if (playAgain.equals("n") || playAgain.equals("no")) {
+                    System.out.println("Thank you for playing!");
+                    break;
+                }
             }
         }
 
