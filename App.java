@@ -8,11 +8,13 @@ public class App {
         String username = scanner.nextLine();
 
         int chips = PlayerManager.registerOrLoadPlayer(username);
-        System.out.println("Welcome, " + username + "! You have " + chips + " chips.");
-
-        
+        System.out.println("Welcome, " + username + "! You have " + chips + " chips.");  
 
         while (true) {
+            if (chips <= 0) {
+                System.out.println("You have no chips left. Game over.");
+                break;
+            }
             System.out.println("Enter your bet (you have " + chips + " chips):");
             int bet = scanner.nextInt();
             scanner.nextLine(); 
@@ -139,11 +141,11 @@ public class App {
         int aces = 0;
 
         for (Card c : desk.getDesk()) {
-            if (c.number > 10) {
-                score += 10;
-            } else if (c.number == 1) {
+            if (c.number == 14) {
                 aces++;
                 score += 11;
+            } else if (c.number > 10) {
+                score += 10;
             } else {
                 score += c.number;
             }
