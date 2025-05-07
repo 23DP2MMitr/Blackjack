@@ -4,6 +4,53 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Welcome To Blackjack!");
+        System.out.println("Commands: 'play' - start game, 'lead' - show leaderboard, 'quit' - exit");
+        String command = scanner.nextLine();
+        while (!command.equals("play")) {
+            if (command.equals("lead") || command.equals("sortmax") || command.equals("sortmin")) {
+                System.out.println("Leaderboard:");
+                PlayerManager.showLeaderboard();
+                System.out.println("Commands: 'play' - start game, 'quit' - exit, 'sortmax' - sort by max chips, 'sortmin' - sort by min chips");
+                if(command.equals("lead")) {
+                    command = scanner.nextLine();
+                }
+                switch (command) {
+                    case "sortmax" -> {
+                        System.out.println("Leaderboard sorted by max chips:");
+                        PlayerManager.sortPlayersByChipsFromMax();
+                        System.out.println("Commands: 'play' - start game, 'quit' - exit, 'sortmax' - sort by max chips, 'sortmin' - sort by min chips");
+                    }
+                    case "sortmin" -> {
+                        System.out.println("Leaderboard sorted by min chips:");
+                        PlayerManager.sortPlayersByChipsFromMin();
+                        System.out.println("Commands: 'play' - start game, 'quit' - exit, 'sortmax' - sort by max chips, 'sortmin' - sort by min chips");
+                    }
+                }
+            }
+            if (command.equals("quit")) {
+                System.out.println("Goodbye!");
+                return;
+            }
+            command = scanner.nextLine();
+            
+        }
+        if (command.equals("quit")) {
+            System.out.println("Goodbye!");
+            return;
+        }
+        if (command.equals("lead")) {
+            System.out.println("Leaderboard:");
+            PlayerManager.showLeaderboard();
+            System.out.println("Commands: 'play' - start game, 'quit' - exit, 'sortmax' - sort by max chips, 'sortmin' - sort by min chips");
+            command = scanner.nextLine();
+            
+            if (command.equals("quit")) {
+                System.out.println("Goodbye!");
+                return;
+            }
+        }
+        
         System.out.println("Enter your username:");
         String username = scanner.nextLine();
 

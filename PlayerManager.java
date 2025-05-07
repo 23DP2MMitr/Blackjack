@@ -79,6 +79,40 @@ public class PlayerManager {
 
     public static void showLeaderboard() {
         System.out.print(ConsoleColors.CLEAR);
+        System.out.println("Leaderboard:");
+        System.out.println("=====================================");
+        List<Player> players = new ArrayList<Player>();
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 2) {
+                    Player player = new Player();
+                    player.name = parts[0];
+                    player.chips = Integer.parseInt(parts[1]);
+                    players.add(player);
+                }
+
+            }
+            reader.close();
+            
+            for (int i = players.size() - 1; i >= 0; i--) {
+                Player player = players.get(i);
+                System.out.println(player.name + ": " + player.chips);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    System.out.println();
+    }
+
+    public static void sortPlayersByChipsFromMax() {
+        System.out.print(ConsoleColors.CLEAR);
+        System.out.println("Leaderboard:");
+        System.out.println("=====================================");
         List<Player> players = new ArrayList<Player>();
 
         try {
@@ -105,5 +139,39 @@ public class PlayerManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    System.out.println();
     }
-}
+
+    public static void sortPlayersByChipsFromMin() {
+        System.out.print(ConsoleColors.CLEAR);
+        System.out.println("Leaderboard:");
+        System.out.println("=====================================");
+        List<Player> players = new ArrayList<Player>();
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 2) {
+                    Player player = new Player();
+                    player.name = parts[0];
+                    player.chips = Integer.parseInt(parts[1]);
+                    players.add(player);
+                }
+
+            }
+            reader.close();
+            players.sort(Comparator.comparingInt(p -> p.chips));
+            
+            for (int i = 0; i < players.size(); i++) {
+                Player player = players.get(i);
+                System.out.println(player.name + ": " + player.chips);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    System.out.println();
+    }}
+
